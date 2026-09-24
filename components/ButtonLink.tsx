@@ -33,6 +33,7 @@ export function ButtonLink({
   } as const;
 
   const classNameValue = `${base} ${styles[variant]} ${className}`;
+  const resolvedHref = href.includes(" ") ? encodeURI(href) : href;
 
   if (isInternalHref(href) && !download && !external) {
     return (
@@ -44,7 +45,7 @@ export function ButtonLink({
 
   return (
     <a
-      href={href}
+      href={resolvedHref}
       className={classNameValue}
       download={download || undefined}
       target={external ? "_blank" : undefined}

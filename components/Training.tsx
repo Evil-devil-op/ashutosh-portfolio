@@ -1,5 +1,6 @@
 import { training } from "@/data/training";
 import { Reveal } from "@/components/Reveal";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export function Training() {
   return (
@@ -61,6 +62,9 @@ export function Training() {
             <p className="max-w-lg text-sm leading-7 text-dim">
               {training.description}
             </p>
+            <ButtonLink href={training.certificatePath} variant="ghost" external>
+              View Certificate
+            </ButtonLink>
           </div>
         </div>
       </Reveal>

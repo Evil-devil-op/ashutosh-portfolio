@@ -73,11 +73,11 @@ export function Contact() {
                 LinkedIn
               </ButtonLink>
               <ButtonLink
-                href={site.resumePath}
+                href="/cv"
                 variant="outline"
                 className="border-paper text-paper hover:bg-paper hover:text-ink"
               >
-                Download CV
+                View CV
               </ButtonLink>
             </div>
           </div>

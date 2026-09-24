@@ -70,8 +70,8 @@ export function Hero() {
           <ButtonLink href="/#contact" variant="outline">
             Contact Me
           </ButtonLink>
-          <ButtonLink href={site.resumePath} variant="outline">
-            Download CV
+          <ButtonLink href="/cv" variant="outline">
+            View CV
           </ButtonLink>
         </motion.div>
         <motion.div

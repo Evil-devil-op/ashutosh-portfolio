@@ -7,4 +7,5 @@ export const training = {
   project: "Bank Queue Management System",
   description:
     "Completed an intensive 50-day training program in Data Structures & Algorithms using C++, building a Bank Queue Management System with queue-based logic.",
+  certificatePath: "/resume/Ashutosh anand_Summer training.PDF",
 } as const;

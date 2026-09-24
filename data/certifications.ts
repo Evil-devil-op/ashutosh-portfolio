@@ -3,6 +3,7 @@ export type Certification = {
   title: string;
   issuer: string;
   date: string;
+  href?: string;
 };
 
 export const certifications: Certification[] = [
@@ -11,11 +12,13 @@ export const certifications: Certification[] = [
     title: "DBMS",
     issuer: "Oracle",
     date: "August 2026",
+    href: "/resume/dbms.pdf",
   },
   {
     number: "02",
     title: "AI Essentials",
     issuer: "Oracle",
-    date: "August 2026",
+    date: "September 2026",
+    href: "/resume/ai-essentials.pdf",
   },
 ];

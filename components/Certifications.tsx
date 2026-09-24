@@ -1,5 +1,6 @@
 import { certifications } from "@/data/certifications";
 import { Reveal } from "@/components/Reveal";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export function Certifications() {
   return (
@@ -36,6 +37,13 @@ export function Certifications() {
                 </p>
                 <p className="font-mono text-xs text-mute">{cert.date}</p>
               </div>
+              {cert.href ? (
+                <div className="mt-6">
+                  <ButtonLink href={cert.href} variant="ghost" external>
+                    View Certificate
+                  </ButtonLink>
+                </div>
+              ) : null}
             </article>
           ))}
         </div>
