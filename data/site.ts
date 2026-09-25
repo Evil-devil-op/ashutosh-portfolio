@@ -18,6 +18,10 @@ export const site = {
   seoTitle: "Ashutosh Anand | Full Stack Web Developer",
   seoDescription:
     "Full Stack Web Developer specializing in React, Node.js, Express.js, REST APIs and modern database technologies.",
+  avatarImage: "/images/avatar-glow.jpg",
+  heroImage: "/images/headshot-hero.jpg",
+  aboutImage: "/images/portrait-editorial.jpg",
+  workspaceImage: "/images/workspace-dev.jpg",
 } as const;
 
 export const navItems = [

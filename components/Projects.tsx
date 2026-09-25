@@ -30,7 +30,7 @@ export function Projects() {
       </Reveal>
       {projects.map((project, index) => (
         <Reveal key={project.slug} delay={index * 0.05}>
-          <ProjectCard project={project} />
+          <ProjectCard project={project} index={index} />
         </Reveal>
       ))}
     </section>
