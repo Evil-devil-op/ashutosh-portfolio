@@ -9,7 +9,7 @@ export type EducationItem = {
 export const education: EducationItem[] = [
   {
     years: "2024 — 2028",
-    title: "B.Tech / CSE",
+    title: "B.Tech in Computer Science and Engineering",
     institution: "Lovely Professional University",
     location: "Phagwara, Punjab",
     detail: "CGPA 6.54",

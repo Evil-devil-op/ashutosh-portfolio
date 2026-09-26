@@ -8,26 +8,21 @@ export const skillGroups: SkillGroup[] = [
   {
     number: "01",
     title: "Frontend",
-    items: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"],
+    items: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "HTML5 / CSS3"],
   },
   {
     number: "02",
     title: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs"],
+    items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"],
   },
   {
     number: "03",
-    title: "Database",
-    items: ["MongoDB", "MySQL", "PostgreSQL"],
+    title: "Databases",
+    items: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
     number: "04",
-    title: "Languages",
-    items: ["JavaScript", "C", "C++", "Python", "Java"],
-  },
-  {
-    number: "05",
-    title: "Tools",
-    items: ["Git", "GitHub", "VS Code", "MongoDB Compass", "npm"],
+    title: "Tools & Foundations",
+    items: ["Git", "GitHub", "VS Code", "npm", "Python", "Java", "C", "C++"],
   },
 ];

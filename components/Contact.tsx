@@ -1,149 +1,147 @@
-"use client";
-
-import Image from "next/image";
 import { site } from "@/data/site";
 import { ButtonLink } from "@/components/ButtonLink";
-import { motion, useReducedMotion } from "framer-motion";
 
 export function Contact() {
-  const reduceMotion = useReducedMotion();
-
-  const fadeIn = (delay: number) =>
-    reduceMotion
-      ? undefined
-      : {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true, amount: 0, margin: "100px 0px" },
-          transition: {
-            duration: 0.8,
-            delay,
-            ease: [0.22, 1, 0.36, 1] as const,
-          },
-        };
-
   return (
     <section
       id="contact"
-      className="scroll-mt-[72px] border-b border-line bg-[#060608] text-ink"
+      className="scroll-mt-[72px] border-b border-line bg-paper"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-12">
-        {/* Left Column: Massive Editorial Heading */}
-        <div className="flex flex-col justify-between border-b border-line px-5 py-12 md:px-10 md:py-20 lg:col-span-7 lg:border-b-0 lg:border-r lg:py-24">
+      {/* Editorial Section Header */}
+      <div className="mx-auto max-w-[1600px] border-b border-line px-5 py-12 sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-14 lg:py-24 xl:px-16">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <motion.p
-              className="editorial-label mb-8 text-accent"
-              {...fadeIn(0.05)}
-            >
-              07 — Contact
-            </motion.p>
-            <motion.h2
+            <p className="mb-4 text-[11px] font-semibold tracking-[0.24em] uppercase text-accent sm:mb-5">
+              07 / CONTACT
+            </p>
+            <h2
               id="contact-heading"
-              className="display-name text-[15vw] leading-[0.84] sm:text-8xl lg:text-[7.5rem] text-ink"
-              {...fadeIn(0.12)}
+              className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem] leading-[0.9]"
             >
-              Let&apos;s
+              Let&apos;s Build Together
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-white/70 sm:text-base">
+            Available for full-stack engineering opportunities, web projects,
+            and technical collaboration.
+          </p>
+        </div>
+      </div>
+
+      {/* Balanced 2-Column Editorial Structure */}
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 divide-y divide-line lg:grid-cols-12 lg:divide-y-0 lg:divide-x">
+        {/* Left Column: Editorial Statement & Primary CTA (6/12) */}
+        <div className="flex flex-col justify-between p-6 sm:p-8 md:p-12 lg:col-span-6 lg:p-14 xl:p-16">
+          <div>
+            <p className="mb-3 text-[10px] font-semibold tracking-[0.24em] uppercase text-accent sm:mb-4">
+              START A DIALOGUE
+            </p>
+            <h3 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[0.95]">
+              Have an opportunity
               <br />
-              Build
-              <br />
-              Something.
-            </motion.h2>
+              or project in mind?
+            </h3>
+            <p className="mt-6 max-w-lg text-sm leading-relaxed text-dim sm:text-base sm:leading-7">
+              Whether you are hiring for a full-stack engineering role, exploring
+              a web application build, or looking to discuss modern systems
+              architecture, feel free to reach out directly.
+            </p>
           </div>
 
-          <motion.div
-            className="mt-12 max-w-md pt-8 border-t border-line/60"
-            {...fadeIn(0.22)}
-          >
-            <p className="text-sm leading-relaxed text-dim">
-              Whether you have an engineering opportunity, a web project, or
-              want to connect on full-stack architecture — feel free to reach out.
-            </p>
-          </motion.div>
+          <div className="mt-10 border-t border-line/60 pt-8">
+            <ButtonLink href={site.emailHref} variant="solid">
+              Start a Conversation &rarr;
+            </ButtonLink>
+          </div>
         </div>
 
-        {/* Right Column: Identity Avatar (avatar-glow.jpg), Details & CTAs */}
-        <div className="flex flex-col justify-between gap-10 px-5 py-12 md:px-10 md:py-20 lg:col-span-5 lg:py-24">
-          <div>
-            {/* Identity Card featuring avatar-glow.jpg */}
-            <motion.div
-              className="flex items-center gap-5 border-b border-line/60 pb-8"
-              {...fadeIn(0.18)}
-            >
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line bg-mist">
-                <Image
-                  src={site.avatarImage}
-                  alt="Portrait of Ashutosh Anand"
-                  fill
-                  sizes="80px"
-                  className="object-cover"
-                />
-              </div>
-
-              <div>
-                <p className="text-2xl font-medium tracking-tight uppercase text-ink">
-                  {site.name}
-                </p>
-                <p className="text-xs uppercase tracking-wider text-accent font-medium">
-                  {site.role}
-                </p>
-                <p className="mt-1 text-xs text-mute">
-                  Open for opportunities &amp; collaborative builds
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Direct Contact Details */}
-            <motion.address
-              className="mt-8 not-italic text-sm leading-8 text-dim"
-              {...fadeIn(0.26)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="editorial-label text-accent">Location:</span>
-                <span className="text-ink">{site.location}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="editorial-label text-accent">Phone:</span>
-                <a
-                  href={site.phoneHref}
-                  className="text-ink transition-colors hover:text-accent font-mono text-xs"
-                >
-                  {site.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="editorial-label text-accent">Email:</span>
+        {/* Right Column: Structured Editorial Channels (6/12) */}
+        <div className="flex flex-col justify-between p-6 sm:p-8 md:p-12 lg:col-span-6 lg:p-14 xl:p-16">
+          <div className="divide-y divide-line/60">
+            {/* Email */}
+            <div className="py-6 first:pt-0 sm:py-8">
+              <p className="mb-2 text-[10px] font-semibold tracking-[0.24em] uppercase text-accent">
+                EMAIL
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <a
                   href={site.emailHref}
-                  className="text-ink transition-colors hover:text-accent break-all"
+                  className="text-base font-medium text-white transition-colors hover:text-accent sm:text-lg break-all"
                 >
                   {site.email}
                 </a>
+                <a
+                  href={site.emailHref}
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold tracking-wider uppercase text-accent transition-colors hover:text-white shrink-0"
+                >
+                  Send Email ↗
+                </a>
               </div>
-            </motion.address>
-          </div>
+            </div>
 
-          {/* Action CTAs */}
-          <motion.div
-            className="flex flex-wrap items-center gap-3 pt-6 border-t border-line"
-            {...fadeIn(0.34)}
-          >
-            <ButtonLink href={site.emailHref} variant="solid">
-              Email Me &rarr;
-            </ButtonLink>
-            <ButtonLink href={site.phoneHref} variant="outline">
-              Call Me
-            </ButtonLink>
-            <ButtonLink href={site.github} variant="outline" external>
-              GitHub
-            </ButtonLink>
-            <ButtonLink href={site.linkedin} variant="outline" external>
-              LinkedIn
-            </ButtonLink>
-            <ButtonLink href="/cv" variant="outline">
-              View CV
-            </ButtonLink>
-          </motion.div>
+            {/* Phone */}
+            <div className="py-6 sm:py-8">
+              <p className="mb-2 text-[10px] font-semibold tracking-[0.24em] uppercase text-accent">
+                PHONE
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                <a
+                  href={site.phoneHref}
+                  className="font-mono text-base font-medium text-white transition-colors hover:text-accent sm:text-lg"
+                >
+                  +91 {site.phone}
+                </a>
+                <a
+                  href={site.phoneHref}
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold tracking-wider uppercase text-accent transition-colors hover:text-white shrink-0"
+                >
+                  Call ↗
+                </a>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="py-6 sm:py-8">
+              <p className="mb-2 text-[10px] font-semibold tracking-[0.24em] uppercase text-accent">
+                LOCATION
+              </p>
+              <p className="text-base font-medium text-white sm:text-lg">
+                {site.location}
+              </p>
+            </div>
+
+            {/* Networks */}
+            <div className="py-6 last:pb-0 sm:py-8">
+              <p className="mb-3 text-[10px] font-semibold tracking-[0.24em] uppercase text-accent">
+                NETWORKS
+              </p>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <a
+                  href={site.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold tracking-wider uppercase text-dim transition-colors hover:text-accent"
+                >
+                  GitHub ↗
+                </a>
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold tracking-wider uppercase text-dim transition-colors hover:text-accent"
+                >
+                  LinkedIn ↗
+                </a>
+                <a
+                  href="/cv"
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold tracking-wider uppercase text-dim transition-colors hover:text-accent"
+                >
+                  CV ↗
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

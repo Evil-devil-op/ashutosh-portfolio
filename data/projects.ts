@@ -12,9 +12,7 @@ export type Project = {
   overview: string;
   features: string[];
   layout: ProjectLayout;
-  // TODO: Add actual repository URL
   githubUrl: string;
-  // TODO: Add actual live demo URL when available
   liveUrl: string;
 };
 
@@ -24,7 +22,7 @@ export const projects: Project[] = [
     slug: "fitness-diet-tracker",
     title: "Fitness & Diet Tracker",
     displayTitle: ["Fitness &", "Diet", "Tracker"],
-    category: "Full Stack",
+    category: "Full Stack Web Application",
     date: "May 2026",
     technologies: [
       "HTML5",
@@ -33,28 +31,26 @@ export const projects: Project[] = [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Mongoose",
+      "JWT",
     ],
     summary:
-      "Backend for a full-stack fitness and diet tracking application, with REST APIs for meal logging, workout logging, and progress tracking.",
+      "A full-stack fitness platform combining workout tracking, nutrition analytics, AI-assisted diet insights, water tracking, and personalized recommendations.",
     overview:
-      "Developed the backend of a full-stack fitness and diet tracking application, building REST APIs with Node.js and Express.js to support meal logging, workout logging, and progress tracking. Formula-based logic computes calories, protein, and fiber from logged meals. User authentication (login/signup) and MongoDB persist profiles, meal logs, and workout history.",
+      "A full-stack fitness platform combining workout tracking, nutrition analytics, AI-assisted diet insights, water tracking, and personalized recommendations. Built with Node.js, Express.js, MongoDB, Mongoose, and JWT authentication, the application supports complete workout CRUD, formula-based BMR and TDEE calculation, macro tracking, daily intake vs required analytics, and Indian-focused weekly diet planning.",
     features: [
-      "Meal logging",
-      "Workout logging",
-      "Progress tracking",
-      "Formula-based calorie calculation",
-      "Protein calculation",
-      "Fiber calculation",
-      "User authentication",
-      "Login / signup",
-      "MongoDB persistence",
-      "User profiles",
-      "Meal logs",
-      "Workout history",
+      "Workout CRUD",
+      "Nutrition and macro tracking",
+      "BMR / TDEE calculation",
+      "AI-assisted diet recommendations",
+      "Water intake tracking",
+      "Weekly nutrition analytics",
+      "Indian-focused diet planning",
+      "Authentication",
     ],
     layout: "visual-right",
-    githubUrl: "", // TODO: Add actual repository URL
-    liveUrl: "", // TODO: Add actual live demo URL when available
+    githubUrl: "",
+    liveUrl: "",
   },
   {
     number: "02",
@@ -80,8 +76,8 @@ export const projects: Project[] = [
       "MongoDB database",
     ],
     layout: "visual-left",
-    githubUrl: "", // TODO: Add actual repository URL
-    liveUrl: "", // TODO: Add actual live demo URL when available
+    githubUrl: "",
+    liveUrl: "",
   },
   {
     number: "03",
@@ -104,8 +100,8 @@ export const projects: Project[] = [
       "Responsive interface",
     ],
     layout: "compact",
-    githubUrl: "", // TODO: Add actual repository URL
-    liveUrl: "", // TODO: Add actual live demo URL when available
+    githubUrl: "",
+    liveUrl: "",
   },
 ];
 
